@@ -2,7 +2,7 @@
  *
  * TOAST utilities
  *
- * Copyright (c) 2016 Andrew Gierth
+ * Copyright (c) 2018 Andrew Gierth
  *
  * Permission to use, copy, modify, and distribute this software for
  * any purpose with or without fee is hereby granted, provided that
@@ -905,6 +905,8 @@ toast_validate_table(PG_FUNCTION_ARGS)
 			}
 		}
 	}
+
+	MemoryContextSwitchTo(oldcontext);
 
 	heap_endscan(heapScan);
 
